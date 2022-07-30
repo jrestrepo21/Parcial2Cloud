@@ -1,5 +1,6 @@
 package co.com.poli.movieservice.persistence.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "movies")
 public class Movie {
