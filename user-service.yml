@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:9020
+        username: admin
+        password: admin
+        instance:
+          service-base-url: http://localhost:9060
+          name: User API Service
+          metadata:
+            user.name: admin
+            user.password: admin
+server:
+  servlet:
+    context-path: /parcial2/api/v1
+  port: 9060
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9010/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
