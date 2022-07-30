@@ -1,6 +1,6 @@
 ext {
     set('springCloudVersion', "2021.0.2")
-    set('springAdminVersion', "2.7.2")
+    set('springAdminVersion', "2.6.7")
 }
 
 dependencies {
