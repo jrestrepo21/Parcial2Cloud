@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
+        </processorPath>
+        <module name="parcial2.showtime-service.main" />
+        <module name="parcial2.eureka-service.main" />
+        <module name="parcial2.movie-service.main" />
+        <module name="parcial2.gateway-service.main" />
+        <module name="parcial2.booking-service.main" />
+        <module name="parcial2.user-service.main" />
+        <module name="parcial2.config-service.main" />
+        <module name="parcial2.admin-service.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="parcial2.customer-service" target="11" />
+      <module name="parcial2.customer-service.main" target="11" />
+      <module name="parcial2.customer-service.test" target="11" />
+      <module name="parcial2.service-product" target="11" />
+      <module name="parcial2.service-product.main" target="11" />
+      <module name="parcial2.service-product.test" target="11" />
+      <module name="parcial2.shopping-service" target="11" />
+      <module name="parcial2.shopping-service.main" target="11" />
+      <module name="parcial2.shopping-service.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
