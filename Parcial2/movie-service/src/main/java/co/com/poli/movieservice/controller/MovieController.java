@@ -26,18 +26,18 @@ public class MovieController {
     private final ResponseBuild builder;
 
     @GetMapping("/{id}")
-    public Response findByID(@PathVariable("id") Long id){
+    public Response findByID(@PathVariable("id") Long id) {
         return builder.success(movieService.findById(id));
     }
 
     @GetMapping
-    public Response findAll(){
+    public Response findAll() {
         return builder.success(movieService.findAll());
     }
 
     @PostMapping
-    public Response save(@Valid @RequestBody Movie movie, BindingResult result){
-        if(result.hasErrors()){
+    public Response save(@Valid @RequestBody Movie movie, BindingResult result) {
+        if (result.hasErrors()) {
             return builder.failed(this.formatMessage(result));
         }
         movieService.save(movie);
@@ -45,13 +45,16 @@ public class MovieController {
     }
 
     @DeleteMapping("/{id}")
-    public Response delete(@PathVariable("id") Long id){
+    public Response delete(@PathVariable("id") Long id) {
         Movie movie = (Movie) findByID(id).getData();
-        if(movie==null){
+        if (movie == null) {
             return builder.failed("Not found");
+        } else {
+            movieService.delete(movie);
         }
         return builder.success(movie);
     }
+
     private String formatMessage(BindingResult result) {
         List<Map<String, String>> errors = result.getFieldErrors().stream()
                 .map(error -> {
