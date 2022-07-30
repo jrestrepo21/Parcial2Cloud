@@ -4,6 +4,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:9000
-      username: ${CONFIG_USER}
-      password: ${CONFIG_PASSWORD}
+      username: admin
+      password: admin
       enabled: true

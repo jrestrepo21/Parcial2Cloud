@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -19,9 +20,9 @@ public class Showtime {
     private Long id;
 
     @Column(name = "date", nullable = false)
-    private LocalDateTime date;
+    private Date date;
 
     @Transient
-    private Movie[] movie;
+    private Movie movie;
 
 }

@@ -3,7 +3,7 @@ spring:
     name: admin-service
   security:
     user:
-      name: ${CONFIG_USER}
-      password: ${CONFIG_PASSWORD}
+      name: admin
+      password: admin
 server:
   port: 9020

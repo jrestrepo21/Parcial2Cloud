@@ -8,8 +8,8 @@ spring:
           uri: file:///D:/Poli/Cloud/Parcial2/parcial2ConfigData
   security:
     user:
-      name: ${CONFIG_USER}
-      password: ${CONFIG_PASSWORD}
+      name: admin
+      password: admin
 server:
   port: 9000
 

@@ -1,10 +1,10 @@
-package co.com.poli.userservice.controller;
+package co.com.poli.bookingservice.controller;
 
-import co.com.poli.userservice.helpers.ErrorMessage;
-import co.com.poli.userservice.helpers.Response;
-import co.com.poli.userservice.helpers.ResponseBuild;
-import co.com.poli.userservice.persistence.entity.User;
-import co.com.poli.userservice.service.UserService;
+import co.com.poli.bookingservice.helpers.ErrorMessage;
+import co.com.poli.bookingservice.helpers.Response;
+import co.com.poli.bookingservice.helpers.ResponseBuild;
+import co.com.poli.bookingservice.persistence.entity.Booking;
+import co.com.poli.bookingservice.service.BookingService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -18,42 +18,31 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/showtimes")
 @RequiredArgsConstructor
-public class UserController {
+public class BookingController {
 
-    private final UserService userService;
+    private final BookingService bookingService;
     private final ResponseBuild builder;
-
-    @PostMapping
-    public Response save(@Valid @RequestBody User user, BindingResult result) {
-        if (result.hasErrors()) {
-            return builder.failed(this.formatMessage(result));
-        }
-        userService.save(user);
-        return builder.success(user);
-    }
 
     @GetMapping("/{id}")
     public Response findByID(@PathVariable("id") Long id) {
-        return builder.success(userService.findById(id));
-    }
-
-    @DeleteMapping("/{id}")
-    public Response delete(@PathVariable("id") Long id) {
-        User user = (User) findByID(id).getData();
-        if (user == null) {
-            return builder.failed("Not found");
-        }
-        userService.delete(user);
-        return builder.success(user);
+        return builder.success(bookingService.findById(id));
     }
 
     @GetMapping
     public Response findAll() {
-        return builder.success(userService.findAll());
+        return builder.success(bookingService.findAll());
     }
 
+    @PostMapping
+    public Response save(@Valid @RequestBody Booking booking, BindingResult result) {
+        if (result.hasErrors()) {
+            return builder.failed(this.formatMessage(result));
+        }
+        bookingService.save(booking);
+        return builder.success(booking);
+    }
 
     private String formatMessage(BindingResult result) {
         List<Map<String, String>> errors = result.getFieldErrors().stream()
