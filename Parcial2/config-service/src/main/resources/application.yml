@@ -5,11 +5,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/jrestrepo21/parcial2ConfiData.git
+          uri: file:///D:/Poli/Cloud/Parcial2/parcial2ConfigData
   security:
     user:
-      name: jrestrepo21
-      password: geral020913
+      name: ${CONFIG_USER}
+      password: ${CONFIG_PASSWORD}
 server:
   port: 9000
 
