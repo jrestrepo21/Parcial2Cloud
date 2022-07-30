@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/showtimes")
+@RequestMapping("/bookings")
 @RequiredArgsConstructor
 public class BookingController {
 
